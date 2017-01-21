@@ -1,0 +1,120 @@
+._container {
+  display: inline-block;
+  color: white;
+}
+
+._button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  white-space: nowrap;
+  display: inline-block;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.16), 0px 0px 5px rgba(0, 0, 0, 0.04);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: 50px;
+  background-color: #02b875;
+  color: inherit;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  position: relative;
+  text-rendering: optimizeSpeed;
+  transition: box-shadow 0.2s, transform 0.1s, opacity 0.1s;
+  /*
+   * Highlight color (dark):
+   */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+
+  &:hover {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16), 0px 2px 8px rgba(0, 0, 0, 0.04);
+    &::after {
+      opacity: 0.08;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: scale(0.98);
+    &::after {
+      opacity: 0.15;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: default;
+    &:active {
+      transform: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
+
+  &:not(._has-label) {
+    padding: 12px;
+  }
+}
+
+/*
+ * The icon and the label should
+ * behave much in the same way
+ */
+._icon,
+._label {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: middle;
+  transition: opacity 0.2s;
+}
+
+._label {
+  color: inherit;
+}
+
+._loader {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+._button._loading {
+  & ._icon {
+    opacity: 0;
+  }
+
+  & ._label {
+    opacity: 0;
+  }
+
+  & .loader {
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+}
+
+._button._has-label {
+  & .icon {
+    margin-left: -5px;
+    margin-right: 5px;
+  }
+}
+

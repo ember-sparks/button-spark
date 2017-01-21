@@ -1,0 +1,26 @@
+<button local-class="
+  {{spark 'button'}}
+  {{if loading (spark 'loading')}}
+  {{if label (spark 'has-label')}}
+"
+  disabled={{if _isDisabled 'true'}}
+  onclick={{action "onClick"}}
+>
+
+  {{#if hasBlock}}
+    <span local-class={{spark "icon"}}>
+      {{yield}}
+    </span>
+  {{/if}}
+
+  {{#if label}}
+    <span local-class={{spark "label"}}>
+      {{label}}
+    </span>
+  {{/if}}
+
+  {{component loadingComponent
+    local-class=(spark "loader")
+  }}
+
+</button>
