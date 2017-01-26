@@ -1,9 +1,11 @@
 {
   "name": "ember-button-spark",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A basic button for Ember Sparks.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-sparks",
+    "button"
   ],
   "license": "MIT",
   "author": "Tristan Edwards <tristan.edwards@me.com> (http://tristanedwards.me)",
@@ -12,7 +14,7 @@
     "test": "tests"
   },
   "repository": {
-    "url": "https://github.com/ember-sparks/button-spark",
+    "url": "https://github.com/ember-sparks/button-spark.git",
     "type": "git"
   },
   "scripts": {
@@ -27,7 +29,7 @@
     "ember-cli-htmlbars": "^1.0.10",
     "postcss-nesting": "2.3.1",
     "autoprefixer": "6.6.1",
-    "ember-sparks": "*"
+    "ember-sparks": "0.1.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -51,7 +53,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "ember-sparks-web": "*",
+    "ember-sparks-web": "0.1.0",
     "loader.js": "^4.0.10",
     "markdown-it": "8.2.2"
   },
@@ -59,6 +61,7 @@
     "node": ">= 0.12.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://ember-sparks.com/button-spark"
   }
 }
